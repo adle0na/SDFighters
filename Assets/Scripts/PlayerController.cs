@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Animator playerAnimator;
     private Rigidbody playerRigidbody;
+
+    public GameObject hitEffectObj;
+
+    public Transform hitEffectPosition;
     
     public SphereCollider weaponCollider;
 
@@ -82,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     public List<float> RangeSkillTimes;
     public List<float> MeleeSkillTimes;
-
+    
     public GameController gameController;
 
     void Start()
@@ -118,70 +122,72 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-                    DashInput(leftKey, rightKey);
-
-            DoJump();
-
-            //DoGuard();
-
-            DoRest();
-
-            DoRangeSkill();
+        if (!gameController.isReady) return;
         
-            DoMeleeSkill();
+        DashInput(leftKey, rightKey);
+
+        DoJump();
+
+        //DoGuard();
+
+        DoRest();
+
+        DoRangeSkill();
         
-            float horizontalInput = 0f;
-
-            if (Input.GetKey(leftKey))
-            {
-                horizontalInput = (userType == UserType.Player1) ? 1f : -1f;
-            }
-            else if (Input.GetKey(rightKey))
-            {
-                horizontalInput = (userType == UserType.Player1) ? -1f : 1f;
-            }
-
-            isMoving = Mathf.Abs(horizontalInput) > 0.1f;
-
-            if(canMove && !isTimed)
-                Move(horizontalInput);
+        DoMeleeSkill();
         
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK0"))
-            {
-                isATK0 = false;
-                playerAnimator.SetBool("ATK0", isATK0);
-            }
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK1"))
-            {
-                isATK1 = false;
-                playerAnimator.SetBool("ATK1", isATK1);
-            }
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK2"))
-            {
-                isATK2 = false;
-                playerAnimator.SetBool("ATK2", isATK2);
-                noOfCombo = 0;
-            }
+        float horizontalInput = 0f;
 
-            // if (Time.time - lastAttackTime > maxComboDelay)
-            // {
-            //     noOfCombo = 0;
-            // }
+        if (Input.GetKey(leftKey))
+        {
+            horizontalInput = (userType == UserType.Player1) ? 1f : -1f;
+        }
+        else if (Input.GetKey(rightKey))
+        {
+            horizontalInput = (userType == UserType.Player1) ? -1f : 1f;
+        }
 
-            if (Time.time > nextfiretime)
-            {
-                if (Input.GetKey(attackAKey))
-                {
-                    StartComboAttack();
-                }
-            }
+        isMoving = Mathf.Abs(horizontalInput) > 0.1f;
+
+        if(canMove && !isTimed)
+            Move(horizontalInput);
         
-            playerAnimator.SetBool("IsJumping", isJumping);
-            playerAnimator.SetBool("IsDashing", isDashing);
-            playerAnimator.SetBool("IsMoving", isMoving);
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK0"))
+        {
+            isATK0 = false;
+            playerAnimator.SetBool("ATK0", isATK0);
+        }
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK1"))
+        {
+            isATK1 = false;
+            playerAnimator.SetBool("ATK1", isATK1);
+        }
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK2"))
+        {
+            isATK2 = false;
+            playerAnimator.SetBool("ATK2", isATK2);
+            noOfCombo = 0;
+        }
+
+        // if (Time.time - lastAttackTime > maxComboDelay)
+        // {
+        //     noOfCombo = 0;
+        // }
+
+        if (Time.time > nextfiretime)
+        {
+            if (Input.GetKey(attackAKey))
+            {
+                StartComboAttack();
+            }
+        }
+        
+        playerAnimator.SetBool("IsJumping", isJumping);
+        playerAnimator.SetBool("IsDashing", isDashing);
+        playerAnimator.SetBool("IsMoving", isMoving);
     }
     
     private void FixedUpdate()
@@ -217,10 +223,14 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("피격");
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
-                
+
                     gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
+
+                    GameObject hitEffect = Instantiate(hitEffectObj, hitEffectPosition);
+
+                    StartCoroutine(EffectTimer(1, hitEffect));
                 }
             }
         }
@@ -236,10 +246,14 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("피격");
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
-
+                    
                     gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
+
+                    GameObject hitEffect = Instantiate(hitEffectObj, hitEffectPosition);
+                    
+                    StartCoroutine(EffectTimer(1, hitEffect));
                 }
             }
         }
@@ -272,6 +286,10 @@ public class PlayerController : MonoBehaviour
                     gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
+
+                    GameObject hitEffect = Instantiate(hitEffectObj, hitEffectPosition);
+
+                    StartCoroutine(EffectTimer(1, hitEffect));
                 }
             }
 
@@ -307,6 +325,10 @@ public class PlayerController : MonoBehaviour
                     gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
+
+                    GameObject hitEffect = Instantiate(hitEffectObj, hitEffectPosition);
+
+                    StartCoroutine(EffectTimer(1, hitEffect));
                 }
             }
             

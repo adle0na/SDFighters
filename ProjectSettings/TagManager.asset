@@ -26,6 +26,7 @@ TagManager:
   - Player2RangeSkill4
   - Player1RangeSkill5
   - Player2RangeSkill5
+  - GameMusic
   layers:
   - Default
   - TransparentFX

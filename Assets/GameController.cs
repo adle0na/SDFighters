@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Demo_Project;
@@ -16,7 +17,13 @@ public class GameController : MonoBehaviour
     public PlayerController player1;
     public PlayerController player2;
 
+    public bool isReady = false;
     public bool isGameOver = false;
+
+    public void GameStart()
+    {
+        StartCoroutine(ReadyUIStart());
+    }
 
     public void GameOverUI(bool isPlayer1Win)
     {
@@ -57,5 +64,46 @@ public class GameController : MonoBehaviour
     {
         
     }
+
+    public void RestartGame()
+    {
+        
+    }
+
+    IEnumerator ReadyUIStart()
+    {
+        yield return new WaitForSeconds(5);
+
+        isReady = true;
+        startUIObject.SetActive(false);
+    }
     
+    public GameObject storyBoardUIObject;
+    public GameObject guideUIObject;
+
+    public GameObject backPanel;
+
+    public void OpenStoryBoard()
+    {
+        backPanel.SetActive(true);
+        storyBoardUIObject.SetActive(true);
+    }
+
+    public void OpenGuide()
+    {
+        backPanel.SetActive(true);
+        guideUIObject.SetActive(true);
+    }
+
+    public void CloseStoryBoard()
+    {
+        backPanel.SetActive(false);
+        storyBoardUIObject.SetActive(false);
+    }
+
+    public void CloseGuide()
+    {
+        backPanel.SetActive(false);
+        guideUIObject.SetActive(false);
+    }
 }
