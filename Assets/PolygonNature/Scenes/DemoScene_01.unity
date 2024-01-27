@@ -11183,6 +11183,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1801141688326414194, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: atkSlash1
       value: 
@@ -11197,7 +11201,7 @@ PrefabInstance:
       objectReference: {fileID: 668831008311998851, guid: 6e74f5fc4d71ec64e89dc440b7878630, type: 3}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: playerHpBar
@@ -11225,7 +11229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: RangeSkills.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: MeleeSkills.Array.data[0]
@@ -11256,12 +11260,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8170752514618103492, guid: 79be24f135d46964e9f186bacaca2299, type: 3}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkills.Array.data[2]
+      value: 
+      objectReference: {fileID: 8432317251264659796, guid: c010541b216137240bde60349595f2fc, type: 3}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkills.Array.data[3]
+      value: 
+      objectReference: {fileID: 2085484867099013540, guid: c2779ae44fe9e1c4cbd86a90a6e22385, type: 3}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkills.Array.data[4]
+      value: 
+      objectReference: {fileID: 7202037676252773923, guid: 2c68ab591529ec446ac4ffdc7fb91291, type: 3}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: MeleeSkillTimes.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: RangeSkillTimes.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: MeleeSkillTimes.Array.data[0]
@@ -11289,11 +11305,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: RangeSkillTimes.Array.data[1]
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: RangeSkillTimes.Array.data[2]
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkillTimes.Array.data[3]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkillTimes.Array.data[4]
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: MeleeSkillPositions.Array.size
@@ -11301,7 +11325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: RangeSkillPositions.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
       propertyPath: MeleeSkillPositions.Array.data[0]
@@ -11331,6 +11355,18 @@ PrefabInstance:
       propertyPath: RangeSkillPositions.Array.data[1]
       value: 
       objectReference: {fileID: 674007157}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 674007157}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 674007157}
+    - target: {fileID: 5011978105120351043, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1866861083}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c8a1f87c4d472844902fd64df709748, type: 3}
 --- !u!1001 &429371723
@@ -14997,6 +15033,7 @@ RectTransform:
   m_Children:
   - {fileID: 3924164877680165695}
   - {fileID: 715058916}
+  - {fileID: 711734110}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19478,6 +19515,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4387668440234660, guid: 5bd70a33951586a43a423d1366da97c0, type: 3}
   m_PrefabInstance: {fileID: 711402683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &711734109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711734110}
+  - component: {fileID: 711734112}
+  - component: {fileID: 711734111}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &711734110
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711734109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 546605682}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &711734111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711734109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &711734112
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711734109}
+  m_CullTransparentMesh: 1
 --- !u!1001 &714028152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33655,6 +33768,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4080510673162006, guid: f597615a8abb43c40be4c01539ceb80b, type: 3}
   m_PrefabInstance: {fileID: 1196064717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1198452781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198452783}
+  - component: {fileID: 1198452782}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1198452782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198452781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007e93a5ca290f0499c88fe853c564f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startUIObject: {fileID: 0}
+  gameOverUIObject: {fileID: 0}
+  gameOverTitleText: {fileID: 0}
+--- !u!4 &1198452783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198452781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25, y: 0.55, z: -19.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1199527686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50866,7 +51026,7 @@ PrefabInstance:
       objectReference: {fileID: 668831008311998851, guid: 6e74f5fc4d71ec64e89dc440b7878630, type: 3}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: playerHpBar
@@ -50886,7 +51046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkills.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: MeleeSkills.Array.data[0]
@@ -50915,14 +51075,26 @@ PrefabInstance:
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkills.Array.data[1]
       value: 
-      objectReference: {fileID: 3541918648375984289, guid: 4d00d1abedcfebe4eb1906fd7fe6ecb7, type: 3}
+      objectReference: {fileID: 8170752514618103492, guid: 54b956ccd3af52c4f9f8c4729e1ccc7e, type: 3}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkills.Array.data[2]
+      value: 
+      objectReference: {fileID: 8432317251264659796, guid: 7e75ba9d2d3c6f248ade95e619456635, type: 3}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkills.Array.data[3]
+      value: 
+      objectReference: {fileID: 2085484867099013540, guid: ff31fc744e443274cac8a52dd40cd877, type: 3}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkills.Array.data[4]
+      value: 
+      objectReference: {fileID: 7202037676252773923, guid: 728d3a387c722d549a70ed37e06734de, type: 3}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: MeleeSkillTimes.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkillTimes.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: MeleeSkillTimes.Array.data[0]
@@ -50950,7 +51122,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkillTimes.Array.data[1]
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillTimes.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillTimes.Array.data[3]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillTimes.Array.data[4]
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: MeleeSkillPositions.Array.size
@@ -50958,7 +51142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkillPositions.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: MeleeSkillPositions.Array.data[0]
@@ -50987,7 +51171,19 @@ PrefabInstance:
     - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: RangeSkillPositions.Array.data[1]
       value: 
-      objectReference: {fileID: 1866861083}
+      objectReference: {fileID: 933841592}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 933841592}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 933841592}
+    - target: {fileID: -5742735760171582775, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
+      propertyPath: RangeSkillPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1382327517}
     - target: {fileID: 1513211147927268, guid: ed5872ac483cb044d8d8cb0a8e686c5c, type: 3}
       propertyPath: m_Name
       value: F08

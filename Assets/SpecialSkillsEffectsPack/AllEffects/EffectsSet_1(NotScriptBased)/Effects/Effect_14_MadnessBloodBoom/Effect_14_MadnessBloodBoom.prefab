@@ -4904,7 +4904,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 30.905006
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 2.5050008}
 --- !u!54 &1371072349941269215
 Rigidbody:
@@ -9817,7 +9817,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 45.900013
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 2.6250007}
 --- !u!54 &5492873440210449128
 Rigidbody:
@@ -14767,7 +14767,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 67.65002
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 13.500003}
 --- !u!54 &311107119605544937
 Rigidbody:
@@ -24562,7 +24562,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0000100000025
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1839427037249914947
 Rigidbody:

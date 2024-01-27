@@ -17,29 +17,27 @@ public class PlayerController : MonoBehaviour
     
     public float jumpForce = 10f;
     
-    private Animator playerAnimator;
+    [HideInInspector]
+    public Animator playerAnimator;
     private Rigidbody playerRigidbody;
     
     public SphereCollider weaponCollider;
 
-    public bool isMoving    = false;
-    public bool isDashing   = false;
-    public bool isJumping   = false;
-    public bool isGuarding  = false;
-    public bool isAttacking = false;
-    public bool isRest      = false;
-    public bool isATK0      = false;
-    public bool isATK1      = false;
-    public bool isATK2      = false;
-    public bool isLeft      = false;
+    private bool isMoving    = false;
+    private bool isDashing   = false;
+    private bool isJumping   = false;
+    private bool isGuarding  = false;
+    private bool isAttacking = false;
+    private bool isRest      = false;
+    private bool isATK0      = false;
+    private bool isATK1      = false;
+    private bool isATK2      = false;
+    private bool isLeft      = false;
 
-    public bool canDash = true;
-    public bool canMove = true;
+    private bool canDash = true;
+    private bool canMove = true;
 
-    public bool Win = false;
-    public bool Lose = false;
-
-    public bool isSkillUsing = false;
+    private bool isSkillUsing = false;
 
     private KeyCode leftKey;
     private KeyCode rightKey;
@@ -50,9 +48,11 @@ public class PlayerController : MonoBehaviour
     private KeyCode attackBKey;
     private KeyCode jumpKey;
 
-    public bool isGrounded = true;
-    public bool isDamaged = false;
-    public bool isTimed = false;
+    private bool isGrounded = true;
+    private bool isDamaged = false;
+    private bool isDie = false;
+    private bool isWin = false;
+    private bool isTimed = false;
     
     private float lastTapTime = 0f;
     private float doubleTapTimeThreshold = 0.2f;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible = false; // 캐릭터가 무적 상태인지 나타내는 변수
     private float invincibleDelay = 0.3f;
 
-    public bool isSkillCoolDown = false;
+    private bool isSkillCoolDown = false;
     private float skillcoolDownRate = 5f;
 
     public Slider playerHpBar;
@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
     public List<float> RangeSkillTimes;
     public List<float> MeleeSkillTimes;
+
+    public GameController gameController;
 
     void Start()
     {
@@ -116,70 +118,70 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        DashInput(leftKey, rightKey);
+                    DashInput(leftKey, rightKey);
 
-        DoJump();
+            DoJump();
 
-        //DoGuard();
+            //DoGuard();
 
-        DoRest();
+            DoRest();
 
-        DoRangeSkill();
+            DoRangeSkill();
         
-        DoMeleeSkill();
+            DoMeleeSkill();
         
-        float horizontalInput = 0f;
+            float horizontalInput = 0f;
 
-        if (Input.GetKey(leftKey))
-        {
-            horizontalInput = (userType == UserType.Player1) ? 1f : -1f;
-        }
-        else if (Input.GetKey(rightKey))
-        {
-            horizontalInput = (userType == UserType.Player1) ? -1f : 1f;
-        }
-
-        isMoving = Mathf.Abs(horizontalInput) > 0.1f;
-
-        if(canMove && !isTimed)
-            Move(horizontalInput);
-        
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK0"))
-        {
-            isATK0 = false;
-            playerAnimator.SetBool("ATK0", isATK0);
-        }
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK1"))
-        {
-            isATK1 = false;
-            playerAnimator.SetBool("ATK1", isATK1);
-        }
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
-            playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK2"))
-        {
-            isATK2 = false;
-            playerAnimator.SetBool("ATK2", isATK2);
-            noOfCombo = 0;
-        }
-
-        // if (Time.time - lastAttackTime > maxComboDelay)
-        // {
-        //     noOfCombo = 0;
-        // }
-
-        if (Time.time > nextfiretime)
-        {
-            if (Input.GetKey(attackAKey))
+            if (Input.GetKey(leftKey))
             {
-                StartComboAttack();
+                horizontalInput = (userType == UserType.Player1) ? 1f : -1f;
             }
-        }
+            else if (Input.GetKey(rightKey))
+            {
+                horizontalInput = (userType == UserType.Player1) ? -1f : 1f;
+            }
+
+            isMoving = Mathf.Abs(horizontalInput) > 0.1f;
+
+            if(canMove && !isTimed)
+                Move(horizontalInput);
         
-        playerAnimator.SetBool("IsJumping", isJumping);
-        playerAnimator.SetBool("IsDashing", isDashing);
-        playerAnimator.SetBool("IsMoving", isMoving);
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK0"))
+            {
+                isATK0 = false;
+                playerAnimator.SetBool("ATK0", isATK0);
+            }
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK1"))
+            {
+                isATK1 = false;
+                playerAnimator.SetBool("ATK1", isATK1);
+            }
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f &&
+                playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("ATK2"))
+            {
+                isATK2 = false;
+                playerAnimator.SetBool("ATK2", isATK2);
+                noOfCombo = 0;
+            }
+
+            // if (Time.time - lastAttackTime > maxComboDelay)
+            // {
+            //     noOfCombo = 0;
+            // }
+
+            if (Time.time > nextfiretime)
+            {
+                if (Input.GetKey(attackAKey))
+                {
+                    StartComboAttack();
+                }
+            }
+        
+            playerAnimator.SetBool("IsJumping", isJumping);
+            playerAnimator.SetBool("IsDashing", isDashing);
+            playerAnimator.SetBool("IsMoving", isMoving);
     }
     
     private void FixedUpdate()
@@ -215,7 +217,8 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("피격");
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
-
+                
+                    gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
                 }
@@ -234,6 +237,7 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
 
+                    gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
                 }
@@ -265,6 +269,7 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
 
+                    gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
                 }
@@ -299,6 +304,7 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("IsDamaged", isDamaged);
                     playerHpBar.value -= GetDamageValue(other.gameObject.tag);
 
+                    gameOverCheck();
                     // 무적 코루틴 시작
                     StartCoroutine(InvincibleDelay());
                 }
@@ -315,6 +321,21 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void gameOverCheck()
+    {
+        if (playerHpBar.value <= 0)
+        {
+            if (userType == UserType.Player1)
+            {
+                gameController.GameOverUI(false);
+            }
+            else
+            {
+                gameController.GameOverUI(true);
+            }
+        }
+    }
+    
     private float GetDamageValue(string tag)
     {
         switch (tag)
