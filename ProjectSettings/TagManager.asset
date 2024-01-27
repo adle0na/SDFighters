@@ -6,12 +6,20 @@ TagManager:
   tags:
   - Ground
   - Weapon
-  - RangeAttack
-  - RangeAttack2
-  - RangeAttack3
-  - MeleeAttack
-  - MeleeAttack2
-  - MeleeAttack3
+  - Player1MeleeSkill1
+  - Player2MeleeSkill1
+  - Player1MeleeSkill2
+  - Player2MeleeSkill2
+  - Player1MeleeSkill3
+  - Player2MeleeSkill3
+  - Player1MeleeSkill4
+  - Player2MeleeSkill4
+  - Player1MeleeSkill5
+  - Player2MeleeSkill5
+  - Player1RangeSkill1
+  - Player2RangeSkill1
+  - Player1RangeSkill2
+  - Player2RangeSkill2
   layers:
   - Default
   - TransparentFX

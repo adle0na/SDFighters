@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2598318851274290060}
   m_Layer: 0
-  m_Name: Effect_49_IceBlockCrash
-  m_TagString: Player1MeleeSkill5
+  m_Name: Effect_49_IceBlockCrash 1
+  m_TagString: Player2MeleeSkill5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203379734843317463, guid: 9c0abb3915bdd7140abe233d64c2b128, type: 3}
       propertyPath: m_TagString
-      value: Player1MeleeSkill5
+      value: Player2MeleeSkill5
       objectReference: {fileID: 0}
     - target: {fileID: 3668725730711605364, guid: 9c0abb3915bdd7140abe233d64c2b128, type: 3}
       propertyPath: m_Materials.Array.size

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 17497916616614717}
   m_Layer: 0
   m_Name: Effect_13_Distort
-  m_TagString: Player1MeleeSkill3
+  m_TagString: Player2MeleeSkill3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9868,7 +9868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7960040246655339058}
   m_Layer: 0
-  m_Name: Effect_13_DangerClose
+  m_Name: Effect_13_DangerClose 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9946,7 +9946,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4171570795768273792, guid: a865c479163ab614d80003e61e41320e, type: 3}
       propertyPath: m_TagString
-      value: Player1MeleeSkill3
+      value: Player2MeleeSkill3
       objectReference: {fileID: 0}
     - target: {fileID: 4171570795768273795, guid: a865c479163ab614d80003e61e41320e, type: 3}
       propertyPath: m_Materials.Array.size
@@ -10006,7 +10006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9161883768323862689, guid: a865c479163ab614d80003e61e41320e, type: 3}
       propertyPath: m_TagString
-      value: Player1MeleeSkill3
+      value: Player2MeleeSkill3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a865c479163ab614d80003e61e41320e, type: 3}
@@ -10075,11 +10075,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 41865963940439020, guid: c93377537c33e0e4bb71e7ad2a4cfa41, type: 3}
       propertyPath: m_TagString
-      value: Player1MeleeSkill3
+      value: Player2MeleeSkill3
       objectReference: {fileID: 0}
     - target: {fileID: 1211797744104983558, guid: c93377537c33e0e4bb71e7ad2a4cfa41, type: 3}
       propertyPath: m_TagString
-      value: Player1MeleeSkill3
+      value: Player2MeleeSkill3
       objectReference: {fileID: 0}
     - target: {fileID: 1211797744104983560, guid: c93377537c33e0e4bb71e7ad2a4cfa41, type: 3}
       propertyPath: m_Materials.Array.size

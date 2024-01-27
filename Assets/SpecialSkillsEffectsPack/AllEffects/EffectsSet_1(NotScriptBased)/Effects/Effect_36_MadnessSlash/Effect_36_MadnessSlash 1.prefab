@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2131840008940636931}
   m_Layer: 0
   m_Name: Effect_36_SlashType_2
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4976,7 +4976,7 @@ GameObject:
   - component: {fileID: 6390849206805795896}
   m_Layer: 0
   m_Name: Effect_36_SlashType_2_3
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9938,7 +9938,7 @@ GameObject:
   - component: {fileID: 9121797120819430245}
   m_Layer: 0
   m_Name: Effect_36_SlashType_2_2
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14865,7 +14865,7 @@ GameObject:
   - component: {fileID: 8038736050319299199}
   m_Layer: 0
   m_Name: Effect_36_Slash_2
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19782,7 +19782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7389421938708674126}
   m_Layer: 0
-  m_Name: Effect_36_MadnessSlash
+  m_Name: Effect_36_MadnessSlash 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19820,7 +19820,7 @@ GameObject:
   - component: {fileID: 1692942358522210106}
   m_Layer: 0
   m_Name: Effect_36_SlashType_2_4
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24747,7 +24747,7 @@ GameObject:
   - component: {fileID: 4224417683058471286}
   m_Layer: 0
   m_Name: Effect_36_Slash_3
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29669,7 +29669,7 @@ GameObject:
   - component: {fileID: 1372885047756679194}
   m_Layer: 0
   m_Name: 'Effect_36_Slash '
-  m_TagString: Player1MeleeSkill1
+  m_TagString: Player2MeleeSkill1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
