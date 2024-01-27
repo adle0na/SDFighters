@@ -201,6 +201,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (userType == UserType.Player1)
+        {
+            if (other.gameObject.CompareTag("Player2RangeSkill5"))
+            {
+                Debug.Log("충돌감지");
+            
+                if (!isInvincible)
+                {
+                    isDamaged = true;
+                    Debug.Log("피격");
+                    playerAnimator.SetBool("IsDamaged", isDamaged);
+                    playerHpBar.value -= GetDamageValue(other.gameObject.tag);
+
+                    // 무적 코루틴 시작
+                    StartCoroutine(InvincibleDelay());
+                }
+            }
+        }
+        else
+        {
+            if (other.gameObject.CompareTag("Player1RangeSkill5"))
+            {
+                Debug.Log("충돌감지");
+            
+                if (!isInvincible)
+                {
+                    isDamaged = true;
+                    Debug.Log("피격");
+                    playerAnimator.SetBool("IsDamaged", isDamaged);
+                    playerHpBar.value -= GetDamageValue(other.gameObject.tag);
+
+                    // 무적 코루틴 시작
+                    StartCoroutine(InvincibleDelay());
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (userType == UserType.Player1)
@@ -210,7 +250,10 @@ public class PlayerController : MonoBehaviour
                 other.gameObject.CompareTag("Player2MeleeSkill2") ||
                 other.gameObject.CompareTag("Player2MeleeSkill3") ||
                 other.gameObject.CompareTag("Player2MeleeSkill5") ||
-                other.gameObject.CompareTag("Player2RangeSkill1")
+                other.gameObject.CompareTag("Player2RangeSkill1") ||
+                other.gameObject.CompareTag("Player2RangeSkill2") ||
+                other.gameObject.CompareTag("Player2RangeSkill3") ||
+                other.gameObject.CompareTag("Player2RangeSkill4")
                )
             {
                 Debug.Log("충돌감지");
@@ -242,7 +285,10 @@ public class PlayerController : MonoBehaviour
                 other.gameObject.CompareTag("Player1MeleeSkill2") ||
                 other.gameObject.CompareTag("Player1MeleeSkill3") ||
                 other.gameObject.CompareTag("Player1MeleeSkill5") ||
-                other.gameObject.CompareTag("Player1RangeSkill1"))
+                other.gameObject.CompareTag("Player1RangeSkill1") ||
+                other.gameObject.CompareTag("Player1RangeSkill2") ||
+                other.gameObject.CompareTag("Player1RangeSkill3") ||
+                other.gameObject.CompareTag("Player1RangeSkill4"))
             {
                 Debug.Log("충돌감지");
             
@@ -294,6 +340,22 @@ public class PlayerController : MonoBehaviour
             case "Player1RangeSkill1":
                 return 0.03f;
             case "Player2RangeSkill1":
+                return 0.03f;
+            case "Player1RangeSkill2":
+                return 0.1f;
+            case "Player2RangeSkill2":
+                return 0.1f;
+            case "Player1RangeSkill3":
+                return 0.2f;
+            case "Player2RangeSkill3":
+                return 0.2f;
+            case "Player1RangeSkill4":
+                return 0.1f;
+            case "Player2RangeSkill4":
+                return 0.1f;
+            case "Player1RangeSkill5":
+                return 0.03f;
+            case "Player2RangeSkill5":
                 return 0.03f;
             default:
                 return 0f;
@@ -566,14 +628,14 @@ public class PlayerController : MonoBehaviour
 
     private void UsingSkill(bool isRangeSkill)
     {
-        // int randomIndex = Random.Range(0, MeleeSkills.Count);
-        // Debug.Log((randomIndex + 1) + "번째 근거리 스킬");
+        int randomIndex = Random.Range(0, MeleeSkills.Count);
+        Debug.Log((randomIndex + 1) + "번째 근거리 스킬");
 
-        int randomIndex = 1;
+        //int randomIndex = 4;
 
         if (isRangeSkill)
         {
-            if (randomIndex == 0)
+            if (randomIndex == 0 || randomIndex == 4)
             {
                 Transform skillPosition = RangeSkillPositions[randomIndex];
 
@@ -587,7 +649,7 @@ public class PlayerController : MonoBehaviour
 
                 // skillPosition.position 및 skillPosition.rotation에서 위치와 회전 정보를 가져와 사용합니다.
                 GameObject skillObj = Instantiate(RangeSkills[randomIndex], skillPosition.position, skillPosition.rotation);
-
+                
                 StartCoroutine(EffectTimer(RangeSkillTimes[randomIndex], skillObj));
             }
         }
@@ -649,19 +711,19 @@ public class PlayerController : MonoBehaviour
         weaponCollider.gameObject.SetActive(false);
     }
     
-    private  IEnumerator GuardTimer(float startTime)
-    {
-        float maxGuardDuration = 5f;
-
-        while (Time.time - startTime < maxGuardDuration)
-        {
-            yield return null; // 한 프레임 대기
-        }
-        isGuarding = false;
-        canDash = true;
-        canMove = true;
-        playerAnimator.SetBool("IsGuarding", isGuarding);
-    }
+    // private  IEnumerator GuardTimer(float startTime)
+    // {
+    //     float maxGuardDuration = 5f;
+    //
+    //     while (Time.time - startTime < maxGuardDuration)
+    //     {
+    //         yield return null; // 한 프레임 대기
+    //     }
+    //     isGuarding = false;
+    //     canDash = true;
+    //     canMove = true;
+    //     playerAnimator.SetBool("IsGuarding", isGuarding);
+    // }
 
     private IEnumerator RestTimer(float startTime)
     {

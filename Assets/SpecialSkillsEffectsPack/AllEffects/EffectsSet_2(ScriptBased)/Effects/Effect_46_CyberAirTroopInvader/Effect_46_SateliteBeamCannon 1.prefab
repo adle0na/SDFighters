@@ -15028,7 +15028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7202037676252773948}
   m_Layer: 0
-  m_Name: Effect_46_SateliteBeamCannon
+  m_Name: Effect_46_SateliteBeamCannon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15174,7 +15174,7 @@ GameObject:
   - component: {fileID: 4100827233111174856}
   m_Layer: 0
   m_Name: Effect_46_MakePoints
-  m_TagString: Player1RangeSkill5
+  m_TagString: Player2RangeSkill5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

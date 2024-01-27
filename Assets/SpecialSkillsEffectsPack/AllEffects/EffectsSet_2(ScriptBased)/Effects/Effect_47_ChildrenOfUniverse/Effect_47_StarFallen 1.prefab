@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085484867099013541}
   m_Layer: 0
-  m_Name: Effect_47_StarFallen
+  m_Name: Effect_47_StarFallen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 3080159530407030450, guid: 4bbb80028db14f346b2fc667f36f828c, type: 3}
+  - {fileID: 3080159530407030450, guid: 183091062e43d644b988f743fb7738c5, type: 3}
   m_startDelay: 0
   m_makeCount: 1
   m_makeDelay: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 3080159530407030450, guid: 4bbb80028db14f346b2fc667f36f828c, type: 3}
+  - {fileID: 3080159530407030450, guid: 183091062e43d644b988f743fb7738c5, type: 3}
   m_startDelay: 0
   m_makeCount: 1
   m_makeDelay: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_makeObjs:
-  - {fileID: 3080159530407030450, guid: 4bbb80028db14f346b2fc667f36f828c, type: 3}
+  - {fileID: 3080159530407030450, guid: 183091062e43d644b988f743fb7738c5, type: 3}
   m_startDelay: 0
   m_makeCount: 1
   m_makeDelay: 0

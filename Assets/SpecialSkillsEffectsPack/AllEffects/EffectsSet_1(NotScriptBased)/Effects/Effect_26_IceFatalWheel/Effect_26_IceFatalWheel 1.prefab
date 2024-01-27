@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6550549406496676822}
   m_Layer: 0
   m_Name: Effect_26_Particles
-  m_TagString: Player1RangeSkill3
+  m_TagString: Player2RangeSkill3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19582,7 +19582,7 @@ GameObject:
   - component: {fileID: 8432317251264659797}
   - component: {fileID: 8432317251264659798}
   m_Layer: 0
-  m_Name: Effect_26_IceFatalWheel
+  m_Name: Effect_26_IceFatalWheel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19622,7 +19622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_power: 0.1
   m_reduceTime: 0
-  m_fowardMove: 0
+  m_fowardMove: 1
   m_rightMove: 0
   m_upMove: 0
   m_changedFactor: 0

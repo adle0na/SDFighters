@@ -20,6 +20,12 @@ TagManager:
   - Player2RangeSkill1
   - Player1RangeSkill2
   - Player2RangeSkill2
+  - Player1RangeSkill3
+  - Player2RangeSkill3
+  - Player1RangeSkill4
+  - Player2RangeSkill4
+  - Player1RangeSkill5
+  - Player2RangeSkill5
   layers:
   - Default
   - TransparentFX

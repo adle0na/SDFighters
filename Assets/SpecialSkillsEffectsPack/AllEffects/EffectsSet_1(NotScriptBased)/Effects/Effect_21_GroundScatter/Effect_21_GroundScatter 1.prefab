@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8170752514618103488}
   - component: {fileID: 422777660627991305}
   m_Layer: 0
-  m_Name: Effect_21_GroundScatter
+  m_Name: Effect_21_GroundScatter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1761588341219571024, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
-      value: Player1RangeSkill2
+      value: Player2RangeSkill2
       objectReference: {fileID: 0}
     - target: {fileID: 1761588341468158745, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
@@ -320,7 +320,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1761588341219571024, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
-      value: Player1RangeSkill2
+      value: Player2RangeSkill2
       objectReference: {fileID: 0}
     - target: {fileID: 1761588341468158745, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
@@ -433,7 +433,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1761588341219571024, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
-      value: Player1RangeSkill2
+      value: Player2RangeSkill2
       objectReference: {fileID: 0}
     - target: {fileID: 1761588341468158745, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
@@ -546,7 +546,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1761588341219571024, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
-      value: Player1RangeSkill2
+      value: Player2RangeSkill2
       objectReference: {fileID: 0}
     - target: {fileID: 1761588341468158745, guid: c2ae8d95860915148bdf28559c527cbb, type: 3}
       propertyPath: m_TagString
