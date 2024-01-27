@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Weapon
+  - RangeAttack
+  - RangeAttack2
+  - RangeAttack3
+  - MeleeAttack
+  - MeleeAttack2
+  - MeleeAttack3
   layers:
   - Default
   - TransparentFX
