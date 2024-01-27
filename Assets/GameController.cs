@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class GameController : MonoBehaviour
     public GameObject gameOverUIObject;
 
     public TextMeshProUGUI gameOverTitleText;
+
+    public GameObject cameraObj;
+    public GameObject userGUIObj;
+    public GameObject beforeUIObj;
 
     public PlayerController player1;
     public PlayerController player2;
@@ -22,6 +27,10 @@ public class GameController : MonoBehaviour
 
     public void GameStart()
     {
+        cameraObj.SetActive(false);
+        userGUIObj.SetActive(true);
+        beforeUIObj.SetActive(false);
+
         StartCoroutine(ReadyUIStart());
     }
 
@@ -60,14 +69,9 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void MoveToTitle()
-    {
-        
-    }
-
     public void RestartGame()
     {
-        
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator ReadyUIStart()
@@ -81,29 +85,23 @@ public class GameController : MonoBehaviour
     public GameObject storyBoardUIObject;
     public GameObject guideUIObject;
 
-    public GameObject backPanel;
-
     public void OpenStoryBoard()
     {
-        backPanel.SetActive(true);
         storyBoardUIObject.SetActive(true);
     }
 
     public void OpenGuide()
     {
-        backPanel.SetActive(true);
         guideUIObject.SetActive(true);
     }
 
     public void CloseStoryBoard()
     {
-        backPanel.SetActive(false);
         storyBoardUIObject.SetActive(false);
     }
 
     public void CloseGuide()
     {
-        backPanel.SetActive(false);
         guideUIObject.SetActive(false);
     }
 }

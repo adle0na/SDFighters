@@ -132,9 +132,7 @@ public class PlayerController : MonoBehaviour
 
         DoRest();
 
-        DoRangeSkill();
-        
-        DoMeleeSkill();
+        DoSkill();
         
         float horizontalInput = 0f;
 
@@ -612,39 +610,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetJump());
         }
     }
-
-    private void DoRangeSkill()
+    
+    private void DoSkill()
     {
-        if (Input.GetKeyDown(leftKey) && Input.GetKeyDown(rightKey) && Input.GetKeyDown(attackBKey) && !isSkillCoolDown)
-        {
-            isSkillUsing = true;
-
-            playerAnimator.SetBool("IsSkillUsing", isSkillUsing);
-
-            UsingSkill(true);
-            
-            StartCoroutine(SkillCoolDown());
-        }
-    }
-
-    private void DoMeleeSkill()
-    {
-        if (Input.GetKeyDown(upKey))
-        {
-            Debug.Log("위키눌림");
-        }
-        
-        if (Input.GetKeyDown(downKey))
-        {
-            Debug.Log("아래키눌림");
-        }
-        
-        if (Input.GetKeyDown(attackBKey))
-        {
-            Debug.Log("스킬키눌림" + isSkillCoolDown);
-        }
-        
-        if (Input.GetKeyDown(upKey) && Input.GetKeyDown(downKey) && Input.GetKeyDown(attackBKey) && !isSkillCoolDown)
+        if (Input.GetKeyDown(downKey) && Input.GetKeyDown(attackBKey) && !isSkillCoolDown)
         {
             Debug.Log("근거리스킬 발동!");
             isSkillUsing = true;
@@ -656,7 +625,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(SkillCoolDown());
         }
         
-        if (Input.GetKeyDown(upKey) && Input.GetKeyDown(downKey) && Input.GetKeyDown(attackAKey) && !isSkillCoolDown)
+        if (Input.GetKeyDown(downKey) && Input.GetKeyDown(attackAKey) && !isSkillCoolDown)
         {
             Debug.Log("원거리스킬 발동!");
             isSkillUsing = true;
