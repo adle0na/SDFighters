@@ -3482,6 +3482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userType: 1
+  turnSmoothTime: 0.1
 --- !u!54 &4197435240502800722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3496,7 +3497,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 82
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!136 &3706884077014120477
 CapsuleCollider:
