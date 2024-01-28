@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     
     private float restStartTime;
     private float restDuration = 5f; // Adjust the duration of rest as needed
-    private float healthRegenRate = 0.001f;
+    private float healthRegenRate = 0.00005f;
     
     private bool isInvincible = false; // 캐릭터가 무적 상태인지 나타내는 변수
     private float invincibleDelay = 0.3f;
@@ -88,6 +88,12 @@ public class PlayerController : MonoBehaviour
     public List<float> MeleeSkillTimes;
     
     public GameController gameController;
+
+    public GameObject healsoundEffect;
+
+    public GameObject youMakeMeLaugh;
+
+    public List<GameObject> skillCoolDownImage;
 
     void Start()
     {
@@ -558,22 +564,30 @@ public class PlayerController : MonoBehaviour
 
     private void DoRest()
     {
-        if (Input.GetKeyDown(attackAKey) && Input.GetKeyDown(attackBKey) && Input.GetKeyDown(downKey))
+        if (Input.GetKeyDown(attackAKey) && Input.GetKeyDown(attackBKey) && Input.GetKeyDown(upKey))
         {
             isRest = true;
             restStartTime = Time.time;
 
+            GameObject healsoundobj = Instantiate(healsoundEffect, hitEffectPosition);
+
+            youMakeMeLaugh.SetActive(true);
+            
             playerAnimator.SetBool("IsResting", isRest);
 
             StartCoroutine(RestTimer(restStartTime));
+            
+            StartCoroutine(EffectTimer(5f, healsoundobj));
         }
 
-        if (Input.GetKeyUp(attackAKey) || Input.GetKeyUp(attackBKey) || Input.GetKeyUp(downKey))
+        if (Input.GetKeyUp(attackAKey) || Input.GetKeyUp(attackBKey) || Input.GetKeyUp(upKey))
         {
             isRest = false;
             canDash = true;
             canMove = true;
 
+            youMakeMeLaugh.SetActive(false);
+            
             playerAnimator.SetBool("IsResting", isRest);
         }
 
@@ -623,6 +637,8 @@ public class PlayerController : MonoBehaviour
             UsingSkill(false);
             
             StartCoroutine(SkillCoolDown());
+
+            StartCoroutine(CoolDownImage());
         }
         
         if (Input.GetKeyDown(downKey) && Input.GetKeyDown(attackAKey) && !isSkillCoolDown)
@@ -635,6 +651,8 @@ public class PlayerController : MonoBehaviour
             UsingSkill(true);
             
             StartCoroutine(SkillCoolDown());
+            
+            StartCoroutine(CoolDownImage());
         }
     }
 
@@ -708,6 +726,22 @@ public class PlayerController : MonoBehaviour
         isTimed = false;
     }
 
+    private IEnumerator CoolDownImage()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            skillCoolDownImage[i].SetActive(false);
+        }
+
+        skillCoolDownImage[0].SetActive(true);
+        
+        for (int i = 1; i <= 5; i++)
+        {
+            yield return new WaitForSeconds(1);
+            skillCoolDownImage[i].SetActive(true);
+        }
+    }
+    
     private IEnumerator AttackTime()
     {
         // 공격 애니메이션의 지속 시간이라 가정
@@ -758,7 +792,7 @@ public class PlayerController : MonoBehaviour
         float skillAnimRate = 0.5f;
         isSkillCoolDown = true;
         isSkillUsing = false;
-        
+
         yield return new WaitForSeconds(skillAnimRate);
 
         playerAnimator.SetBool("IsSkillUsing", isSkillUsing);
